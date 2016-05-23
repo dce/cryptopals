@@ -17,7 +17,7 @@ let hex_to_base64 (hex : string) : string =
   let ints = ints_of_hex_string hex in
   let chars = List.map Char.chr ints in
   let str = String.of_list chars in
-  Base64.str_encode str;;
+  Base64.str_encode str
 
 let main () =
   print_endline (hex_to_base64 (Array.get Sys.argv 1))
