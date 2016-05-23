@@ -20,6 +20,6 @@ let hex_to_base64 (hex : string) : string =
   Base64.str_encode str;;
 
 let main () =
-  print_string (hex_to_base64 (Array.get Sys.argv 1))
+  print_endline (hex_to_base64 (Array.get Sys.argv 1))
 
 let () = if Sys.argv.(0) = "./challenge1" then main () else ()

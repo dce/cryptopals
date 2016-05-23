@@ -10,6 +10,6 @@ let hex_string_of_ints (ns : int list) : string =
 let main () =
   let ns1 = Challenge1.ints_of_hex_string (Array.get Sys.argv 1) in
   let ns2 = Challenge1.ints_of_hex_string (Array.get Sys.argv 2) in
-  print_string (hex_string_of_ints (fixed_xor ns1 ns2))
+  print_endline (hex_string_of_ints (fixed_xor ns1 ns2))
 
 let () = if Sys.argv.(0) = "./challenge2" then main () else ()
