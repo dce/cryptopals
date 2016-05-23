@@ -7,8 +7,8 @@ let rec make_key (i : int) (len : int) : int list =
   | 0 -> []
   | n -> i :: make_key i (len - 1)
 
-let decrypt_with (i : int) : char list =
-  let ns = Challenge1.ints_of_hex_string ciphertext in
+let decrypt_with (str : string) (i : int) : char list =
+  let ns = Challenge1.ints_of_hex_string str in
   let key = make_key i (List.length ns) in
   let plaintext = Challenge2.fixed_xor ns key in
   List.map Char.chr plaintext
@@ -27,7 +27,7 @@ let rec max_spaces (css : char list list) : char list =
 
 let main () =
   let keys = List.range 0 `To 255 in
-  let candidates = List.map decrypt_with keys in
+  let candidates = List.map (decrypt_with ciphertext) keys in
   print_endline (String.of_list (max_spaces candidates))
 
 let () = if Sys.argv.(0) = "./challenge3" then main () else ()
