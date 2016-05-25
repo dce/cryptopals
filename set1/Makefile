@@ -4,6 +4,7 @@ all:
 	ocamlfind ocamlc -package batteries -linkpkg -o challenge3 challenge1.cmo challenge2.cmo challenge3.ml
 	ocamlfind ocamlc -package batteries -linkpkg -o challenge4 challenge1.cmo challenge2.cmo challenge3.cmo challenge4.ml
 	ocamlfind ocamlc -package batteries -linkpkg -o challenge5 challenge1.cmo challenge2.cmo challenge5.ml
+	ocamlfind ocamlc -package batteries -linkpkg -o challenge6 challenge6.ml
 
 test:
 	@echo "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
@@ -24,3 +25,4 @@ clean:
 	rm -f challenge3
 	rm -f challenge4
 	rm -f challenge5
+	rm -f challenge6
